@@ -85,7 +85,7 @@ script:
     .ci/check_tidy.sh
   else
     .ci/travis.sh
-    conant create CLIUtils/CLI11
+    conan create . CLIUtils/CLI11
   fi
 after_success:
 - if [ -n "$COVERALLS" ] ; then cd $TRAVIS_BUILD_DIR && .ci/run_codecov.sh ; fi
